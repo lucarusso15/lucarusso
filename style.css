@@ -27,9 +27,7 @@
   --side-pad:    28px;
   --section-gap: 14vh;
 
-  /* Project layout
-     clamp() gives fluid scaling without extra breakpoints:
-     16px at ~114px viewport → 200px at ~1430px viewport */
+  /* Project layout */
   --base-pad:   clamp(16px, 14vw, 200px);
   --photo-w:    500px;
   --photo-xl-w: 900px;
@@ -57,13 +55,15 @@
 
 /* ── Base ───────────────────────────────────────────── */
 body {
-  background:             var(--color-bg);
-  color:                  var(--color-fg);
-  font-family:            "Rubik", Arial, sans-serif;
-  font-size:              var(--font-size);
-  font-weight:            400;
-  line-height:            1;
-  -webkit-font-smoothing: antialiased;
+  background:               var(--color-bg);
+  color:                    var(--color-fg);
+  font-family:              "Rubik", Arial, sans-serif;
+  font-size:                var(--font-size);
+  font-weight:              400;
+  line-height:              1;
+  -webkit-font-smoothing:   antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust:         100%;
 }
 
 img {
@@ -150,8 +150,10 @@ body.page-index main {
 }
 
 .preview-item img {
-  width: min(var(--preview-w), calc((100vw - var(--side-pad) * 2 - 16px) / 2));
+  width:      min(var(--preview-w), calc((100vw - var(--side-pad) * 2 - 16px) / 2));
+  max-height: calc(100vh - var(--header-h) - var(--side-pad) * 2);
 }
+
 
 /* ═══════════════════════════════════════════════════════
    INFO PAGE
@@ -303,12 +305,11 @@ body.page-project main {
   flex-shrink: 0;
 }
 
-/* Size modifiers for pair */
 .s-pair .size-sm { width: min(300px, calc((100vw - var(--side-pad) * 2 - var(--pair-gap)) / 2)); }
 .s-pair .size-md { width: min(500px, calc((100vw - var(--side-pad) * 2 - var(--pair-gap)) / 2)); }
 .s-pair .size-lg { width: min(700px, calc((100vw - var(--side-pad) * 2 - var(--pair-gap)) / 2)); }
 
-/* Spread variant: photos at opposite edges */
+/* Spread variant */
 .s-pair.spread {
   justify-content: space-between;
   align-items:     flex-start;
@@ -321,7 +322,7 @@ body.page-project main {
 .s-pair.spread .size-lg { width: 700px; }
 .s-pair.spread .size-xl { width: 900px; }
 
-/* Wide variant: photos far apart */
+/* Wide variant */
 .s-pair.wide {
   gap:             500px;
   justify-content: flex-start;
@@ -394,7 +395,7 @@ body.page-project main {
 .s-with-text .size-lg { width: 700px; }
 .s-with-text .size-xl { width: 900px; }
 
-/* ── Offset utilities (optional fine-tuning) ────────── */
+/* ── Offset utilities ───────────────────────────────── */
 .offset-sm-r { padding-left: calc(var(--base-pad) + 80px); }
 .offset-md-r { padding-left: calc(var(--base-pad) + 160px); }
 .offset-lg-r { padding-left: calc(var(--base-pad) + 240px); }
@@ -403,104 +404,23 @@ body.page-project main {
 .offset-lg-l { padding-left: calc(var(--base-pad) - 60px); }
 
 /* ═══════════════════════════════════════════════════════
-   HORIZONTAL PROJECT PAGE
-   ═══════════════════════════════════════════════════════ */
-
-body.page-horizontal {
-  overflow: hidden;
-}
-
-body.page-horizontal main {
-  margin-top:         var(--header-h);
-  height:             calc(100vh - var(--header-h));
-  display:            flex;
-  align-items:        center;
-  overflow-x:         auto;
-  overflow-y:         hidden;
-  padding:            0 100px;
-  scrollbar-width:    none;      /* Firefox */
-  -ms-overflow-style: none;      /* IE/Edge */
-}
-
-body.page-horizontal main::-webkit-scrollbar {
-  display: none;                 /* Chrome/Safari */
-}
-
-.h-with-title {
-  display:     flex;
-  align-items: center;
-  gap:         48px;
-  flex-shrink: 0;
-}
-
-.h-opening {
-  flex-shrink:  0;
-  margin-right: 48px;
-}
-
-.h-opening h1 {
-  font-size:      var(--font-size-title);
-  font-weight:    700;
-  letter-spacing: 0.01em;
-}
-
-.h-opening p {
-  font-size:   var(--font-size);
-  font-weight: 300;
-  font-style:  italic;
-  color:       var(--color-muted);
-}
-
-.h-photo {
-  flex-shrink:  0;
-  margin-right: 20px;
-}
-
-.h-photo img {
-  max-height: calc(100vh - var(--header-h) - 140px);
-  max-width:  500px;
-  width:      auto;
-  height:     auto;
-}
-
-.h-text {
-  flex-shrink:  0;
-  width:        380px;
-  margin-left:  80px;
-  margin-right: 80px;
-}
-
-.h-text p {
-  line-height:   var(--line-height);
-  margin-bottom: 20px;
-}
-
-.h-text p:last-child { margin-bottom: 0; }
-.h-text em           { font-style: italic; }
-
-/* Gap utilities — space to the RIGHT of each block */
-.gap-xs { margin-right: 20px;  }
-.gap-sm { margin-right: 60px;  }
-.gap-md { margin-right: 120px; }
-.gap-lg { margin-right: 240px; }
-.gap-xl { margin-right: 420px; }
-
-/* ═══════════════════════════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════════════════════════ */
 
-/* Tablet (769px – 1024px) */
+/* Tablet (≤ 1024px) */
 @media (max-width: 1024px) {
   .s-pair img {
     width: min(380px, calc((100vw - var(--side-pad) * 2 - var(--pair-gap)) / 2));
   }
+
+  .s-photo-text { gap: 48px; }
 }
 
 /* Mobile (≤ 768px) */
 @media (max-width: 768px) {
   :root {
     --side-pad:    16px;
-    --section-gap: 10vh;
+    --section-gap: 20px;
   }
 
   header {
@@ -511,18 +431,12 @@ body.page-horizontal main::-webkit-scrollbar {
     gap:       12px;
   }
 
+  .instagram-link { display: none; }
+
   nav { gap: 16px; }
 
-  .instagram-link {
-    right:  var(--side-pad);
-    bottom: var(--side-pad);
-  }
-
   /* Index */
-  body.page-index {
-    height:   auto;
-    overflow: auto;
-  }
+  body.page-index { height: auto; overflow: auto; }
 
   body.page-index main {
     margin-top: 0;
@@ -530,9 +444,16 @@ body.page-horizontal main::-webkit-scrollbar {
     padding:    24px var(--side-pad) 80px;
   }
 
+  .preview-item:first-child { display: none; }
+
   .preview-grid {
     flex-direction: column;
     gap:            32px;
+    align-items:    center;
+  }
+
+  .preview-item img {
+    width: min(var(--preview-w), calc(100vw - var(--side-pad) * 2));
   }
 
   /* Info */
@@ -541,13 +462,24 @@ body.page-horizontal main::-webkit-scrollbar {
     padding:    32px var(--side-pad) 100px;
   }
 
-  .about-text { max-width: 100%; }
+  .about-text { max-width: min(320px, calc(100vw - var(--side-pad) * 2)); }
 
   /* Project */
   body.page-project main {
     margin-top: 0;
-    padding:    24px 0 100px;
+    padding:    24px 0 48px;
   }
+
+  .s-photo-text {
+    flex-direction: column;
+    padding-left:   var(--side-pad);
+    padding-right:  var(--side-pad);
+    gap:            48px;
+    margin-bottom:  48px;
+  }
+
+  .s-photo-text__img          { width: 100%; }
+  .s-photo-text .s-text-block { margin-top: 0; }
 
   .s-opening,
   .s-single,
@@ -561,33 +493,71 @@ body.page-horizontal main::-webkit-scrollbar {
 
   .s-single,
   .s-single.s-right,
-  .s-single.s-center {
-    align-items: flex-start;
-  }
+  .s-single.s-center { align-items: flex-start; }
 
   .s-opening img,
   .s-single img,
-  .s-pair img {
+  .s-single.size-sm img,
+  .s-single.size-md img,
+  .s-single.size-lg img,
+  .s-single.size-xl img,
+  .s-pair img,
+  .s-pair .size-sm,
+  .s-pair .size-md,
+  .s-pair .size-lg {
     width:     100%;
     max-width: 100%;
   }
 
-  .s-opening {
-    flex-direction: column;
-    gap:            20px;
-  }
-
-  .s-pair {
-    flex-direction: column;
-    gap:            16px;
-  }
-
-  .s-text-block {
-    margin-left: 0;
-  }
+  .s-opening { flex-direction: column; gap: 20px; }
+  .s-pair    { flex-direction: column; gap: 20px; }
+  .s-text-block { margin-left: 0; }
 
   [class*="offset-"] {
     padding-left:  var(--side-pad);
     padding-right: var(--side-pad);
   }
 }
+
+/* Home landscape */
+@media (orientation: landscape) and (max-height: 600px) {
+  body.page-index {
+    height:         100svh;
+    overflow:       hidden;
+    display:        flex;
+    flex-direction: column;
+  }
+
+  body.page-index header { flex-shrink: 0; }
+
+  body.page-index main {
+    flex:       1;
+    margin-top: 0;
+    height:     auto;
+    padding:    8px var(--side-pad);
+    overflow:   hidden;
+  }
+
+  .instagram-link        { display: none; }
+  .preview-item:first-child { display: block; }
+
+  .preview-grid {
+    flex-direction: row;
+    gap:            8px;
+    align-items:    center;
+    height:         100%;
+  }
+
+  .preview-item {
+    flex:     1;
+    height:   100%;
+    overflow: hidden;
+  }
+
+  .preview-item img {
+    height:    100%;
+    width:     auto;
+    max-width: 100%;
+  }
+}
+
