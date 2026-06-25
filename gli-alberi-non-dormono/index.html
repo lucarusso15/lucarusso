@@ -8,7 +8,7 @@
   <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../style.css" />
 </head>
-<body class="page-project">
+<body class="page-slideshow">
 
   <header>
     <a class="site-name" href="../">Luca Russo</a>
@@ -19,61 +19,72 @@
 
   <main>
 
-    <!-- First photo + text alongside -->
-    <div class="s-photo-text">
+    <div class="slideshow">
 
-      <img class="s-photo-text__img" src="../images/gli-alberi-non-dormono/DSCF0339.jpg" alt="" />
+      <div class="slide active">
+        <img src="../images/gli-alberi-non-dormono/DSCF0339.jpg" alt="" />
+      </div>
 
-      <div class="s-text-block" lang="en">
-        <p>Gli alberi non dormono</p>
-        <p>Like all living organisms, trees regulate their cycles through the alternation of light and darkness. Artificial light interferes with this natural rhythm, affecting processes such as growth and photosynthesis.</p>
-        <p>The effects of light pollution are not always immediately visible, but emerge over time, quietly altering natural balances.</p>
-        <p><em>Gli alberi non dormono</em> was made at night in urban parks, using only existing public lighting. The photographs explore the tension between the beauty of nocturnal urban scenes and the vulnerability of ecosystems exposed to artificial light.</p>
+      <div class="slide">
+        <img src="../images/gli-alberi-non-dormono/DSCF0407.jpg" alt="" />
+      </div>
+
+      <div class="slide">
+        <img src="../images/gli-alberi-non-dormono/DSCF0440.jpg" alt="" />
+      </div>
+
+      <div class="slide">
+        <img src="../images/gli-alberi-non-dormono/DSCF0282.jpg" alt="" />
+      </div>
+
+      <div class="slide">
+        <img src="../images/gli-alberi-non-dormono/DSCF0278.jpg" alt="" />
+      </div>
+
+      <div class="slide">
+        <img src="../images/gli-alberi-non-dormono/DSCF0273.jpg" alt="" />
+      </div>
+
+      <div class="slide">
+        <img src="../images/gli-alberi-non-dormono/DSCF0269.jpg" alt="" />
+      </div>
+
+      <div class="slide">
+        <img src="../images/gli-alberi-non-dormono/DSCF0337.jpg" alt="" />
+      </div>
+
+      <div class="slide">
+        <img src="../images/gli-alberi-non-dormono/DSCF0275.jpg" alt="" />
+      </div>
+
+      <div class="slide">
+        <img src="../images/gli-alberi-non-dormono/DSCF0361.jpg" alt="" />
+      </div>
+
+      <div class="slide">
+        <img src="../images/gli-alberi-non-dormono/DSCF0382.jpg" alt="" />
+      </div>
+
+      <div class="slide">
+        <img src="../images/gli-alberi-non-dormono/DSCF0379.jpg" alt="" />
       </div>
 
     </div>
 
-    <div class="s-single size-md">
-      <img src="../images/gli-alberi-non-dormono/DSCF0407.jpg" alt="" loading="lazy" />
-    </div>
-
-    <div class="s-single size-md">
-      <img src="../images/gli-alberi-non-dormono/DSCF0440.jpg" alt="" loading="lazy" />
-    </div>
-
-    <div class="s-single size-md">
-      <img src="../images/gli-alberi-non-dormono/DSCF0282.jpg" alt="" loading="lazy" />
-    </div>
-
-    <div class="s-pair">
-      <img class="size-md" src="../images/gli-alberi-non-dormono/DSCF0278.jpg" alt="" loading="lazy" />
-      <img class="size-md" src="../images/gli-alberi-non-dormono/DSCF0273.jpg" alt="" loading="lazy" />
-    </div>
-
-    <div class="s-single size-md">
-      <img src="../images/gli-alberi-non-dormono/DSCF0269.jpg" alt="" loading="lazy" />
-    </div>
-
-    <div class="s-single size-md">
-      <img src="../images/gli-alberi-non-dormono/DSCF0337.jpg" alt="" loading="lazy" />
-    </div>
-
-    <div class="s-single size-md">
-      <img src="../images/gli-alberi-non-dormono/DSCF0275.jpg" alt="" loading="lazy" />
-    </div>
-
-    <div class="s-pair">
-      <img class="size-md" src="../images/gli-alberi-non-dormono/DSCF0361.jpg" alt="" loading="lazy" />
-      <img class="size-md" src="../images/gli-alberi-non-dormono/DSCF0382.jpg" alt="" loading="lazy" />
-    </div>
-
-    <div class="s-single size-md">
-      <img src="../images/gli-alberi-non-dormono/DSCF0379.jpg" alt="" loading="lazy" />
-    </div>
-
   </main>
 
-  <a class="instagram-link" href="https://www.instagram.com/lucarusso15/" target="_blank" rel="noopener">Instagram</a>
+  <p class="project-label" id="project-label-btn">About this project</p>
+
+  <div class="project-overlay" id="project-overlay">
+    <div class="project-overlay__content">
+      <p>Gli alberi non dormono</p>
+      <p>Like all living organisms, trees regulate their cycles through the alternation of light and darkness. Artificial light interferes with this natural rhythm, affecting processes such as growth and photosynthesis.</p>
+      <p>The effects of light pollution are not always immediately visible, but emerge over time, quietly altering natural balances.</p>
+      <p><em>Gli alberi non dormono</em> was made at night in urban parks, using only existing public lighting. The photographs explore the tension between the beauty of nocturnal urban scenes and the vulnerability of ecosystems exposed to artificial light.</p>
+    </div>
+  </div>
+
+  <script src="../scripts/slideshow.js" defer></script>
 
 </body>
 </html>
