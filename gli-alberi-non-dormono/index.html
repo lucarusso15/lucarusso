@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Gli alberi non dormono — A photography project by Luca Russo" />
+  <meta name="description" content="Gli alberi non dormono — Luca Russo" />
   <title>Gli alberi non dormono — Luca Russo</title>
   <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../style.css" />
 </head>
-<body class="page-slideshow">
+<body class="page-project">
 
   <header>
     <a class="site-name" href="../">Luca Russo</a>
@@ -18,73 +18,85 @@
   </header>
 
   <main>
+    <div class="project-grid">
 
-    <div class="slideshow">
-
-      <div class="slide active">
+      <!-- Row 1: photo + text -->
+      <div class="project-grid__cell">
         <img src="../images/gli-alberi-non-dormono/DSCF0339.jpg" alt="" />
       </div>
-
-      <div class="slide">
-        <img src="../images/gli-alberi-non-dormono/DSCF0407.jpg" alt="" />
+      <div class="project-grid__cell project-grid__cell--text">
+        <h1 class="project-title">Gli alberi non dormono</h1>
+        <p>Like all living organisms, trees regulate their cycles through the alternation of light and darkness. Artificial light interferes with this natural rhythm, affecting processes such as growth and photosynthesis.</p>
+        <p>The effects of light pollution are not always immediately visible, but emerge over time, quietly altering natural balances.</p>
+        <p><em>Gli alberi non dormono</em> was made at night in urban parks, using only existing public lighting. The photographs explore the tension between the beauty of nocturnal urban scenes and the vulnerability of ecosystems exposed to artificial light.</p>
       </div>
 
-      <div class="slide">
-        <img src="../images/gli-alberi-non-dormono/DSCF0440.jpg" alt="" />
+      <div class="project-grid__cell">
+        <img src="../images/gli-alberi-non-dormono/DSCF0407.jpg" alt="" loading="lazy" />
+      </div>
+      <div class="project-grid__cell"></div>
+
+      <div class="project-grid__cell">
+        <img src="../images/gli-alberi-non-dormono/DSCF0440.jpg" alt="" loading="lazy" />
+      </div>
+      <div class="project-grid__cell"></div>
+
+      <div class="project-grid__cell">
+        <img src="../images/gli-alberi-non-dormono/DSCF0282.jpg" alt="" loading="lazy" />
+      </div>
+      <div class="project-grid__cell"></div>
+
+      <!-- Home pair: same row -->
+      <div class="project-grid__cell">
+        <img src="../images/gli-alberi-non-dormono/DSCF0278.jpg" alt="" loading="lazy" />
+      </div>
+      <div class="project-grid__cell">
+        <img src="../images/gli-alberi-non-dormono/DSCF0273.jpg" alt="" loading="lazy" />
       </div>
 
-      <div class="slide">
-        <img src="../images/gli-alberi-non-dormono/DSCF0282.jpg" alt="" />
+      <div class="project-grid__cell">
+        <img src="../images/gli-alberi-non-dormono/DSCF0269.jpg" alt="" loading="lazy" />
       </div>
+      <div class="project-grid__cell"></div>
 
-      <div class="slide">
-        <img src="../images/gli-alberi-non-dormono/DSCF0278.jpg" alt="" />
+      <div class="project-grid__cell">
+        <img src="../images/gli-alberi-non-dormono/DSCF0337.jpg" alt="" loading="lazy" />
       </div>
+      <div class="project-grid__cell"></div>
 
-      <div class="slide">
-        <img src="../images/gli-alberi-non-dormono/DSCF0273.jpg" alt="" />
+      <div class="project-grid__cell">
+        <img src="../images/gli-alberi-non-dormono/DSCF0275.jpg" alt="" loading="lazy" />
       </div>
+      <div class="project-grid__cell"></div>
 
-      <div class="slide">
-        <img src="../images/gli-alberi-non-dormono/DSCF0269.jpg" alt="" />
+      <div class="project-grid__cell">
+        <img src="../images/gli-alberi-non-dormono/DSCF0361.jpg" alt="" loading="lazy" />
       </div>
+      <div class="project-grid__cell"></div>
 
-      <div class="slide">
-        <img src="../images/gli-alberi-non-dormono/DSCF0337.jpg" alt="" />
+      <div class="project-grid__cell">
+        <img src="../images/gli-alberi-non-dormono/DSCF0382.jpg" alt="" loading="lazy" />
       </div>
+      <div class="project-grid__cell"></div>
 
-      <div class="slide">
-        <img src="../images/gli-alberi-non-dormono/DSCF0275.jpg" alt="" />
+      <div class="project-grid__cell">
+        <img src="../images/gli-alberi-non-dormono/DSCF0379.jpg" alt="" loading="lazy" />
       </div>
-
-      <div class="slide">
-        <img src="../images/gli-alberi-non-dormono/DSCF0361.jpg" alt="" />
-      </div>
-
-      <div class="slide">
-        <img src="../images/gli-alberi-non-dormono/DSCF0382.jpg" alt="" />
-      </div>
-
-      <div class="slide">
-        <img src="../images/gli-alberi-non-dormono/DSCF0379.jpg" alt="" />
-      </div>
+      <div class="project-grid__cell"></div>
 
     </div>
-
   </main>
 
-  <p class="project-label" id="project-label-btn">About this project</p>
+  <footer></footer>
 
-  <div class="project-overlay" id="project-overlay">
-    <div class="project-overlay__content">
-      <p>Gli alberi non dormono</p>
-      <p>Like all living organisms, trees regulate their cycles through the alternation of light and darkness. Artificial light interferes with this natural rhythm, affecting processes such as growth and photosynthesis.</p>
-      <p>The effects of light pollution are not always immediately visible, but emerge over time, quietly altering natural balances.</p>
-      <p><em>Gli alberi non dormono</em> was made at night in urban parks, using only existing public lighting. The photographs explore the tension between the beauty of nocturnal urban scenes and the vulnerability of ecosystems exposed to artificial light.</p>
+  <div class="viewer" id="viewer">
+    <button class="viewer__close" id="viewer-close">Close</button>
+    <div class="viewer__img-wrap">
+      <img id="viewer-img" src="" alt="" />
     </div>
   </div>
 
-  <script src="../scripts/slideshow.js" defer></script>
-
+  <script src="../scripts/fadein.js" defer></script>
+  <script src="../scripts/viewer.js" defer></script>
 </body>
 </html>
