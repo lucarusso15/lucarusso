@@ -139,10 +139,10 @@ body.page-index main {
   height:    500px;
   width:     auto;
   display:   block;
-  animation: fadeUp 0.5s ease forwards;
+  animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-@keyframes fadeUp {
+@keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
@@ -198,7 +198,6 @@ body.page-project main {
   color:         var(--color-fg);
 }
 
-.project-grid__cell--text p:last-child { margin-bottom: 0; }
 .project-grid__cell--text em            { font-style: italic; }
 
 /* Photo grid */
@@ -219,64 +218,12 @@ body.page-project main {
   width:       500px;
   height:      auto;
   display:     block;
-  cursor:      zoom-in;
-  user-select: none;
   opacity:     0;
-  transform:   translateY(30px);
-  transition:  opacity 0.5s ease, transform 0.5s ease;
+  transition:  opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-grid__cell img.visible {
+.project-grid__cell img.is-visible {
   opacity:   1;
-  transform: translateY(0);
-}
-
-/* ═══════════════════════════════════════════════════════
-   VIEWER
-   ═══════════════════════════════════════════════════════ */
-
-.viewer {
-  position:        fixed;
-  inset:           0;
-  background:      var(--color-bg);
-  z-index:         200;
-  display:         flex;
-  align-items:     center;
-  justify-content: center;
-  opacity:         0;
-  pointer-events:  none;
-  transition:      opacity 0.3s ease;
-  user-select:     none;
-}
-
-.viewer.active {
-  opacity:        1;
-  pointer-events: auto;
-}
-
-.viewer__img-wrap img {
-  max-height:          calc(100vh - 80px);
-  max-width:           calc(100vw - 160px);
-  width:               auto;
-  height:              auto;
-  user-select:         none;
-  -webkit-user-drag:   none;
-  pointer-events:      none;
-}
-
-.viewer__close {
-  position:        fixed;
-  bottom:          var(--side-pad);
-  right:           var(--side-pad);
-  background:      none;
-  border:          none;
-  cursor:          pointer;
-  font-size:       var(--font-size);
-  font-weight:     400;
-  color:           var(--color-fg);
-  letter-spacing:  0.01em;
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -354,10 +301,51 @@ body.page-info main {
     padding:    0 var(--side-pad);
   }
 
+  .index-item {
+    flex-direction: column;
+    align-items:    flex-start;
+    gap:            0;
+  }
+
+  /* On mobile: secondary image goes below, primary col (image hidden, title visible) goes after */
+  .index-item > .index-item__img-wrap { order: 1; }
+  .index-item__col                    { order: 2; }
+
+  /* Hide the primary image, keep title visible */
+  .index-item__col .index-item__img-wrap { display: none; }
+
   .index-item__img-wrap img {
     width:  100%;
     height: auto;
   }
+
+  /* Project */
+  body.page-project main {
+    margin-top: 0;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    padding:               var(--side-pad);
+    gap:                   var(--side-pad);
+  }
+
+  .project-grid__cell {
+    justify-content: flex-start;
+  }
+
+  .project-grid__cell img {
+    width:  100%;
+    height: auto;
+  }
+
+  .project-grid__cell--text {
+    padding:        0;
+    padding-top:    16px;
+    padding-bottom: 16px;
+  }
+
+  .project-grid__cell:empty { display: none; }
 
   /* Info */
   body.page-info main {
