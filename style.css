@@ -13,7 +13,7 @@
 :root {
   --color-bg:        #ffffff;
   --color-fg:        #111111;
-  --font-size:       14px;
+  --font-size:       16px;
   --font-size-title: 18px;
   --line-height:     1.75;
   --side-pad:        28px;
@@ -56,7 +56,7 @@ header {
 }
 
 .site-name {
-  font-size:       16px;
+  font-size:       18px;
   font-weight:     500;
   letter-spacing:  0.01em;
   text-decoration: none;
@@ -78,7 +78,7 @@ body.page-home main {
   justify-content: flex-start;
   padding:         100px var(--side-pad) 60px;
   width:           100%;
-  max-width:       420px;
+  max-width:       480px;
 }
 
 .home-bio {
@@ -97,7 +97,7 @@ body.page-home main {
 }
 
 .home-nav__title {
-  font-size:      15px;
+  font-size:      17px;
   font-weight:    400;
   letter-spacing: 0.01em;
   margin-bottom:  8px;
@@ -159,7 +159,7 @@ body.page-project main {
 }
 
 .project-title {
-  font-size:     15px;
+  font-size:     17px;
   font-weight:   400;
   width:         868px;
   margin-bottom: 12px;
@@ -199,4 +199,83 @@ body.page-project main {
   font-weight: 300;
   line-height: var(--line-height);
   width:       868px;
+}
+
+/* ── Mobile ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  :root {
+    --side-pad: 20px;
+  }
+
+  .home-bio {
+    font-size: 16px;
+  }
+
+  .site-name {
+    font-size: 19px;
+  }
+
+  .home-nav__title {
+    font-size: 18px;
+  }
+
+  .project-title {
+    font-size: 18px;
+  }
+
+  /* Home */
+  body.page-home main {
+    padding-top:    60px;
+    padding-bottom: 40px;
+  }
+
+  .home-bio {
+    margin-bottom: 40px;
+  }
+
+  /* Project page */
+  .project-intro {
+    height:         auto;
+    min-height:     calc(100dvh - 56px);
+    padding-top:    40px;
+    padding-bottom: 40px;
+    padding-left:   var(--side-pad);
+    padding-right:  var(--side-pad);
+  }
+
+  .project-images {
+    flex-wrap:       wrap;
+    justify-content: center;
+    gap:             16px;
+  }
+
+  .project-images img.size-small,
+  .project-images img.size-medium,
+  .project-images img.size-large {
+    width:     100%;
+    max-width: 420px;
+    height:    auto;
+  }
+
+  .project-title {
+    width:     100%;
+    max-width: 420px;
+  }
+
+  .project-text {
+    width:     100%;
+    max-width: 420px;
+    font-size: 17px;
+  }
+
+  .project-progress {
+    padding:   0 var(--side-pad);
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 380px) {
+  .home-bio {
+    font-size: 15px;
+  }
 }
